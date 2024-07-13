@@ -1,0 +1,33 @@
+/* ComboBox.css */
+.combobox {
+  position: relative;
+  display: inline-block;
+}
+
+.combobox-input {
+  width: 200px;
+  padding: 8px;
+}
+
+.combobox-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  border: 1px solid #ccc;
+  background: white;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.combobox-option {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.combobox-option:hover {
+  background-color: #f0f0f0;
+}
