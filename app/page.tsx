@@ -1,18 +1,26 @@
 "use client";
-import ComboBox from "@/components/ComboBox3";
+import React from "react";
+import Command from "@/components/Command";
+
 export default function Home() {
+  const handleSelect = (value: string) => {
+    console.log("selectedOption", value);
+  };
+
   return (
     <div>
       <div>
-        <ComboBox>
-          <ComboBox.Input placeholder='Select an option...' />
-          <ComboBox.List>
-            <ComboBox.Option>Option 1</ComboBox.Option>
-            <ComboBox.Option>Option 2</ComboBox.Option>
-            <ComboBox.Option>Option 3</ComboBox.Option>
-            <ComboBox.Option>Another option</ComboBox.Option>
-          </ComboBox.List>
-        </ComboBox>
+        <Command>
+          <Command.Input placeholder='Select an option...' />
+          <Command.List>
+            <Command.Item>Option 1</Command.Item>
+            <Command.Item>Option 2</Command.Item>
+            <Command.Item>Option 3</Command.Item>
+            <Command.Item onSelect={() => handleSelect("Another option")}>
+              Another option
+            </Command.Item>
+          </Command.List>
+        </Command>
       </div>
     </div>
   );

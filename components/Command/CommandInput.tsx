@@ -1,14 +1,13 @@
-// ComboBoxInput.tsx
 import React, { FC, ChangeEvent, useEffect } from "react";
-import { useComboBox } from "./ComboBoxContext";
+import { useCommand } from "./CommandContext";
 
-interface ComboBoxInputProps {
+interface CommandInputProps {
   placeholder?: string;
 }
 
-const ComboBoxInput: FC<ComboBoxInputProps> = ({ placeholder }) => {
+const CommandInput: FC<CommandInputProps> = ({ placeholder }) => {
   const { isOpen, toggleOpen, inputValue, setInputValue, selectedValue } =
-    useComboBox();
+    useCommand();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
@@ -24,11 +23,10 @@ const ComboBoxInput: FC<ComboBoxInputProps> = ({ placeholder }) => {
     <input
       type='text'
       value={isOpen ? inputValue : selectedValue}
-      onClick={toggleOpen}
       onChange={handleInputChange}
       placeholder={placeholder}
     />
   );
 };
 
-export default ComboBoxInput;
+export default CommandInput;
